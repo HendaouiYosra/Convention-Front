@@ -22,4 +22,16 @@ export class AppComponent implements OnInit{
     (respose:Convention[])=>this.conventions=respose,
     (error:HttpErrorResponse)=>alert(error.message)))}
 
+
+    
+    handleDeleteConvention(convention: Convention) {
+      this.ConventionService.deleteConvention(convention.id).subscribe({
+        next: () => {
+          this.getConventions(); 
+        },
+        error: (err: HttpErrorResponse) => {
+          console.log(err); 
+        }
+      });
+    }
 }

@@ -20,9 +20,11 @@ export class ConventionService {
   }
   
   updateConvention(convention:Convention):Observable<Convention>{
-    return this.http.put<Convention>(`${this.apiServerUrl}/conventions/${convention.id}`,convention);
+    return this.http.put<Convention>(`${this.apiServerUrl}/convention/${convention.id}`,convention);
   }
-  deleteConvention(id:number):Observable<unknown>{
-    return this.http.delete<unknown>(`${this.apiServerUrl}/conventions/${id}`);
+  deleteConvention(id: number): Observable<unknown> {
+    console.log(`${this.apiServerUrl}/conventions/${id}`);
+    return this.http.delete<unknown>(`${this.apiServerUrl}/convention/${id}`);
   }
+  
 }
