@@ -82,6 +82,7 @@ table th {
 
 .table-card {
     border-radius: 20px;
+    max-height: 70vh;
 }
 
 .mylist {
@@ -144,4 +145,14 @@ td {
 
 .button-table {
     all: initial;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

@@ -19,8 +19,8 @@ export class ConventionService {
     return this.http.post<Convention>(`${this.apiServerUrl}/convention`,convention);
   }
   
-  updateConvention(convention:Convention):Observable<Convention>{
-    return this.http.put<Convention>(`${this.apiServerUrl}/convention/${convention.id}`,convention);
+  updateConvention(id:number,convention:Convention):Observable<Convention>{
+    return this.http.put<Convention>(`${this.apiServerUrl}/convention/${id}`,convention);
   }
   deleteConvention(id: number): Observable<unknown> {
     console.log(`${this.apiServerUrl}/conventions/${id}`);
