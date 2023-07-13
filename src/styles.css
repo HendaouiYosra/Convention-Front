@@ -21,6 +21,8 @@
 
 .title {
     display: flex;
+    padding: 1vh;
+    align-items: center;
 }
 
 .c {
@@ -78,6 +80,10 @@ table th {
     color: rgb(255, 255, 255);
     cursor: pointer;
     position: relative;
+}
+
+.navbar h1 {
+    margin: 0;
 }
 
 .table-card {
