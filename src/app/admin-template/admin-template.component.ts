@@ -5,6 +5,8 @@ import { Convention } from '../interface/convention';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatDialog,MatDialogRef } from '@angular/material/dialog';
 import { AddEditComponent } from '../add-edit/add-edit.component';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class AdminTemplateComponent implements OnInit{
   public conventions?:Convention[];
   title = 'Convention';
   
-  constructor(private ConventionService:ConventionService ,private dialog:MatDialog){
+  constructor(private ConventionService:ConventionService ,private dialog:MatDialog,private authService:AuthService,private routeur:Router){
 
   }
 
@@ -68,6 +70,10 @@ export class AdminTemplateComponent implements OnInit{
       
       
       
+    }
+    logout(){
+      this.authService.logout();
+      this.routeur.navigateByUrl("/login");
     }
 
 }

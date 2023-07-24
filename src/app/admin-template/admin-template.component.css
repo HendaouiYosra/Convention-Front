@@ -162,3 +162,22 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+#logout {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    text-align: left;
+    cursor: pointer;
+    display: inline-block;
+    width: auto;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    line-height: normal;
+    color: inherit;
+    outline: none;
+    user-select: none;
+}

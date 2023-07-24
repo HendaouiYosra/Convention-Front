@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit{
     console.log(this.formLogin.value);
     this.authService.login(username,password).subscribe({
       next: data=>{this.authService.loadProfile(data);
-        this.routeur.navigateByUrl("/admin")},
+        if(this.authService.roles.includes("ADMIN")){this.routeur.navigateByUrl("/admin");}
+        else{this.routeur.navigateByUrl("/user");}},
      
       error:err=>{console.log(err);}
     })
