@@ -13,18 +13,18 @@ export class ConventionService {
 
   constructor(private http:HttpClient) { }
   getConventions():Observable<Convention[]>{
-    return this.http.get<Convention[]>(`${this.apiServerUrl}/convention`);
+    return this.http.get<Convention[]>(`http://localhost:8080/convention`);
   }
   addConvention(convention:Convention ):Observable<Convention>{
-    return this.http.post<Convention>(`${this.apiServerUrl}/convention`,convention);
+    return this.http.post<Convention>(`http://localhost:8080/convention`,convention);
   }
   
   updateConvention(id:number,convention:Convention):Observable<Convention>{
-    return this.http.put<Convention>(`${this.apiServerUrl}/convention/${id}`,convention);
+    return this.http.put<Convention>(`http://localhost:8080/convention/${id}`,convention);
   }
   deleteConvention(id: number): Observable<unknown> {
-    console.log(`${this.apiServerUrl}/conventions/${id}`);
-    return this.http.delete<unknown>(`${this.apiServerUrl}/convention/${id}`);
+    console.log(`http://localhost:8080/conventions/${id}`);
+    return this.http.delete<unknown>(`http://localhost:8080/convention/${id}`);
   }
   
 }

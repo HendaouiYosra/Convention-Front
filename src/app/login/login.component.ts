@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Injectable, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit{
   formLogin! :FormGroup;
-  constructor(private fb:FormBuilder ,private authService:AuthService , private routeur:Router){}
+  constructor(private fb:FormBuilder ,@Inject(AuthService) private authService: AuthService, private routeur:Router){}
  
   hide: boolean = true;
   
@@ -39,5 +40,4 @@ export class LoginComponent implements OnInit{
     })
   
   }
-
 }

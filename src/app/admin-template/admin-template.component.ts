@@ -20,7 +20,7 @@ export class AdminTemplateComponent implements OnInit{
 
   }
 
-
+  
   openAddForm(){
     this.dialog.open(AddEditComponent);
     this.dialog.afterAllClosed.subscribe ({next: () => {
@@ -35,18 +35,17 @@ export class AdminTemplateComponent implements OnInit{
     ngOnInit(): void {
       this.getConventions();
     }
-  getConventions(): void {
-    this.ConventionService.getConventions().subscribe(
-      (response: any) => {
-        this.conventions = response; 
-       
-      },
-      (error: HttpErrorResponse) => {
-        console.log(error);
-      }
-    );
-  }
-  
+    getConventions(): void {
+      this.ConventionService.getConventions().subscribe(
+        (response: any) => {
+          this.conventions = response; 
+        },
+        (error: HttpErrorResponse) => {
+          console.log('Error occurred:', error);
+        
+        }
+      );
+    }
 
     
     handleDeleteConvention(convention: Convention):void {
@@ -63,6 +62,10 @@ export class AdminTemplateComponent implements OnInit{
       this.dialog.open(AddEditComponent,{
         data,
       });
+      this.dialog.afterAllClosed.subscribe ({next: () => {
+    
+        this.getConventions();}})
+      
       
       
     }

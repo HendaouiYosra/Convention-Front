@@ -24,6 +24,7 @@ export class AuthService {
     this.isAuthenticated=true;
 
     this.accessToken=data[ 'access-token'];
+    console.log(this.accessToken);
     let decodedJwt:any=jwtDecode(this.accessToken);
     this.username=decodedJwt.sub;
     this.roles=decodedJwt.scope;

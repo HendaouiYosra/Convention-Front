@@ -15,9 +15,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import {MatIconModule} from '@angular/material/icon';
-import { HomePageComponent } from './home-page/home-page.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { UserTemplateComponent } from './user-template/user-template.component';
 
 
 @NgModule({
@@ -25,8 +25,8 @@ import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
     AppComponent,
     AddEditComponent,
     LoginComponent,
-    HomePageComponent,
-    AdminTemplateComponent,
+  AdminTemplateComponent,
+  UserTemplateComponent,
   
    
   ],

@@ -36,7 +36,7 @@ export class AddEditComponent implements OnInit {
     
     if (this.conventionForm.valid) {
       if(this.data){ this.conventionService.updateConvention(this.data.id,this.conventionForm.value).subscribe({next:(val:any)=>{
-       ;this.dialogRef.close();
+       this.dialogRef.close();
    
      
    },error:(err:any)=>{console.error(err);}})
