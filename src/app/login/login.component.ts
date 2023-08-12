@@ -13,8 +13,9 @@ import { Injectable, Inject } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   formLogin! :FormGroup;
+  
   constructor(private fb:FormBuilder ,@Inject(AuthService) private authService: AuthService, private routeur:Router){}
  
   hide: boolean = true;
@@ -37,7 +38,9 @@ export class LoginComponent implements OnInit{
         if(this.authService.roles.includes("ADMIN")){this.routeur.navigateByUrl("/admin");}
         else{this.routeur.navigateByUrl("/user");}},
      
-      error:err=>{console.log(err);}
+      error:err=>{console.log(err);
+        const myDivElement= document.getElementById('wrong');
+        myDivElement!.textContent = "vérifiez votre nom d'utilisateur et votre mot de passe";}
     })
   
   }

@@ -24,6 +24,7 @@
                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
+                <div id="wrong"></div>
             </form>
             <button mat-button class="bt btn-success" (click)="handleLogin()">Se Connecter</button>
         </div>

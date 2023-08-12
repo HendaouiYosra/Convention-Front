@@ -22,3 +22,9 @@ form mat-form-field {
     color: #25ab97 !important;
     /* Custom text color */
 }
+
+#wrong {
+    font-size: smaller;
+    color: rgb(148, 23, 33);
+    margin: 2vh;
+}
